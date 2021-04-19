@@ -1,0 +1,54 @@
+<h1>Panti's Dithering Shader Like It's No Biggie</h1>
+<div>
+  <div>
+  <h3>Pick a dithering matrix (or write ur own I don't give a dICK)</h3>
+    <select name="app-matrix">
+      <option value="_2">2x2</option>
+      <option value="_3">3x3</option>
+      <option value="_4">4x4</option>
+      <option value="_8">8x8</option>
+      <option value="_16" selected>16x16</option>
+    </select>
+    <br>
+    <textarea name="app-matrix-text"></textarea>
+  <div>
+  <h3>Choose or Write a color palette (what do you mean "put a color picker" smh)</h3>
+  <select name="app-palette">
+    <option value="_2">2 colors (black n white)</option>
+    <option value="_3">3 colors (rgb)</option>
+    <option value="_5">5 colors (bwrgb)</option>
+    <option value="_6">6 colors (rgbcmy)</option>
+    <option value="_8" selected>8 colors (bwrgbcmy)</option>
+    <option value="_16">16 colors (rgbcmy + dark tones)</option>
+    <option value="gameboy">original gameboy</option>
+    <option value="gameboy_pocket">gameboy pocket</option>
+  </select>
+  <br>
+  <textarea name="app-palette-text">
+{"r":0,"g":0,"b":0},
+{"r":255,"g":255,"b":255}
+  </textarea>
+  <h3>Set some dumbass variables, or not im not ur boss</h3>
+  <label>aggressiveness threshold <input name="app-threshold" value="1.0" type="number"></input></label><br>
+  <label>r-factor <input name="app-r-factor" value='0.35'></input></label><br>
+  <label>g-factor <input name="app-g-factor" value='0.59'></input></label><br>
+  <label>b-factor <input name="app-b-factor" value='0.11'></input></label><br>
+  <label>lighting <input name="app-light" value='1.0' type="number"></input></label><br>
+  <label>mask <input name="app-mask" value='{"r":127, "g":127, "b":127}'></input></label><br>
+  
+  <h3>Paste a pic or its source or just upload the dam thing.</h3>
+  <label>Load from url  <button name="app-img-load-from-url">Load</button> <input name="app-img-url" value=""></input></label>
+  <br>
+  <label>Upload the pic <input type="file" name="app-img-upload"></input></label>
+  <br>
+  <label>Just paste the Pic HERE <input name="app-img-paste"></input></label>
+  <button name="app-dither">Dither this bitch</button>
+  <div>
+    <span name="app-uploaded-pic" style="">
+      <canvas name="app-canvas-original"></canvas>
+    </span>
+    <span name="app-modified-pic" style="">
+      <canvas name="app-canvas-result"></canvas>
+    </span>
+  </div>
+</div>
